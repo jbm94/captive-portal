@@ -4,8 +4,6 @@ Simple captive portal with Apache2 (httpd) running in a Docker container.
 
 > All network traffic should be redirected to this docker container (e.g., with iptables. See [Usage](#Usage "Usage section") and [Notes](#Notes "Notes section") sections.
 
----
-
 ## Usage
 
 1. Create a wireless access point using your preferred method (e.g., hostapd + dnsmasq, [create_ap](https://github.com/oblique/create_ap)).
@@ -54,8 +52,6 @@ Simple captive portal with Apache2 (httpd) running in a Docker container.
 
   > Change `container_ip` with real cp-container ip. See the [Notes](#Notes "Notes section") section below.
 
----
-
 ## Notes
 
 - `container_ip` can be obtained with:
@@ -64,7 +60,7 @@ Simple captive portal with Apache2 (httpd) running in a Docker container.
   $ docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' cp-container
   ```
 
-- `hotspot_interface` is your AP interface, usually `wlan0`, or ʻap0` when using [create_ap] (https://github.com/oblique/create_ap). It can be obtained with::
+- `hotspot_interface` is your AP interface, usually `wlan0`, or ʻap0` when using [create_ap](https://github.com/oblique/create_ap). It can be obtained with::
 
   ```cmd
   $ ip addr
